@@ -35,7 +35,7 @@ such as genshi, make, werk, etc etc..
 ==Run Moe==
 Then run the installation with 
 
-./path/to/google_appengine/dev_appserver.py ./app   
+/path/to/google_appengine/dev_appserver.py ./app   
 
 
 
