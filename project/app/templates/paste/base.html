@@ -1,0 +1,18 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}{{ _('Pastebin') }} - {{ sitename }}{% endblock %}
+
+{% block head_extra -%}
+    <link rel="stylesheet" type="text/css" href="/static/default/styles/paste.css">
+{%- endblock %}
+
+{% block body_id %}paste{% endblock %}
+
+{% block sidebar %}
+    {% include 'paste/_sidebar.html' %}
+{% endblock %}
+
+{% block body_extra %}
+    {{ super() }}
+    <script type="text/javascript" src="/static/default/scripts/paste.js"></script>
+{% endblock %}

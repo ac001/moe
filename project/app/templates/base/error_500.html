@@ -1,0 +1,13 @@
+{% extends 'base/error.html' %}
+
+{% block title %}{{ _('Ooops! Server error.') }} - {{ sitename }}{% endblock %}
+
+{% block content %}
+    <h1>{{ _('Ooops! Server error.') }}</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>{{ _("Something very weird occurred to make this server reject your request.") }}</p>
+        <p>{{ _("Don't worry, it is not your fault. I bet those squirrels are around again. Damn squirrels!") }}</p>
+    {% endif %}
+{% endblock %}

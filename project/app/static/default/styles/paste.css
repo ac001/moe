@@ -1,0 +1,18 @@
+@import url('base.css');
+@import url('common.css');
+@import url('site.css');
+@import url('highlight.css');
+@import url('_forms.css');
+
+#content .paste-tools {
+    position: relative;
+    text-align: right;
+}
+#content .paste-tools p {
+    padding: 0;
+    margin: 0 0 .3em 0;
+}
+#content .paste-tools a.download {
+    background: transparent url('/static/default/images/disk.png') no-repeat 0 0;
+    padding: 0 0 5px 20px;
+}

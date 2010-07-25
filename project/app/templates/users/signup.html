@@ -1,0 +1,28 @@
+{% extends 'base/layout.html' %}
+
+{% from 'base/_form_macros.html' import form_field %}
+
+{% block title %}{{ _('Signup') }}{% endblock %}
+
+{% block head_extra -%}
+    <link rel="stylesheet" type="text/css" href="/static/default/styles/home.css">
+{%- endblock %}
+
+{% block content %}
+    <h1>{{ _('Create a New Account') }}</h1>
+    <p>{{ _('Please choose a nickname and confirm your email address.') }}</p>
+
+    <form method="post" action="{{ current_url }}" enctype="multipart/form-data" class="tipfy-form">
+        <ol>
+            <li>{{ form_field(form.username, class='medium') }}</li>
+            <li>{{ form_field(form.email, class='medium') }}</li>
+            {% if 'password' in form %}
+                <li>{{ form_field(form.password, class='medium') }}</li>
+                <li>{{ form_field(form.confirm_password, class='medium') }}</li>
+            {% endif %}
+        </ol>
+        <fieldset class="submit">
+            <input type="submit" name="submit" value="{{ _('Save') }}">
+        </fieldset>
+    </form>
+{% endblock %}

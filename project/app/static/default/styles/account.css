@@ -1,0 +1,86 @@
+@import url("base.css");
+html, body {
+       background: #f0f0f0;
+}
+#account_box {
+    width: 400px;
+    background: #FFFFFF;
+    text-align: left;
+    border: 3px solid #66C1FF;
+    padding: 2px;
+    margin: 100px auto 0;
+}
+#account_box h1 {
+    background: #CBEAFF;
+    color: #003366;
+    font-size: 138.5%;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+    margin: 0;
+    border: 0;
+}
+#account_box h2 {
+    color: #003366;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 0 1em;
+    margin: .5em 0 .5em;
+    border: 0;
+}
+
+#account_box p, #account_box LABEL {
+    border: 0;
+    padding: 0 1em;
+    margin-bottom: .5em;
+}
+#account_box p.remember {
+    margin-top: 2em;
+}
+
+#account_box ul.radio {
+    border: 0;
+    padding: 0 1em;
+}
+#account_box ul.radio {
+    margin: 0;
+}
+#account_box ul.radio li {
+    list-style: none;
+    margin-bottom: .5em;
+}
+
+#account_box .text {
+    font-size: 138.5%;
+    border: 1px solid #999999;
+    padding: .3em;
+    width: 60%;
+}
+#account_box .text:focus {
+    background: #F2F8FF;
+    border: 1px solid #3399FF;
+}
+#account_box .checkbox, #account_box .radio {
+    margin-right: .5em;
+}
+#account_box fieldset.submit {
+    text-align: center;
+    margin: 2em 0 1.5em;
+}
+#account_box input.submit {
+    font-size: 138.5%;
+}
+
+#account_box p.footer {
+    background: #F2F2F2;
+    color: #666666;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+}
+#account_box p.footer a:link, #account_box p.footer a:visited {
+    color: #666666;
+}
+#account_box p.footer a:active, #account_box p.footer a:hover {
+    color: #3399FF;
+}

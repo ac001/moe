@@ -1,0 +1,69 @@
+{% extends 'wiki/base.html' %}
+
+{% set page_title = _('History for %(page_name)s', page_name=revision.title)|e %}
+{% set feed_link = url_for('wiki/changes-atom', area_name=area.name, page_path=page_path) %}
+
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{%- block head_extra -%}
+    {{- super() -}}
+    <link type="application/atom+xml" rel="alternate" href="{{ feed_link }}" title="{{ _('Atom feed for this page') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="first">
+        {{ page_title }}
+        <a href="{{ feed_link }}" class="icon feedlink" title="{{ _('Atom feed for this page') }}">{{ _('Feed') }}</a>
+    </h1>
+    {% if revisions %}
+        <p>{{ _('Here are the previous revisions for this page. To revert to an old revision, just access the selected one, edit and save it.') }}</p>
+        <form method="post" action="{{ current_url }}" class="tipfy-form">
+            <table class="grid" id="wiki-changes">
+                <tbody>
+                {% set row_class = cycler('odd', 'even') %}
+                {% for rev in revisions %}
+                    {% if rev.id == 'latest' %}
+                        {% set url = url_for('wiki/index', area_name=area.name, page_path=page_path) %}
+                    {% else %}
+                        {% set url = url_for('wiki/index', area_name=area.name, page_path=page_path, version=rev.id) %}
+                    {% endif %}
+                    <tr class="{{ row_class.next() }}">
+                        <td class="version-selector"><input type="radio" name="version1" value="{{ rev.id }}"{% if loop.index == 1 %} checked="checked"{% endif %}></td>
+                        <td class="version-selector"><input type="radio" name="version2" value="{{ rev.id }}"{% if loop.index == 2 %} checked="checked"{% endif %}></td>
+                        <td>
+                            <a href="{{ url }}">{{ format_datetime(rev.updated, format='medium') }}</a>
+                            - {{ rev.editor.username }}
+                            {% if rev.id == 'latest' -%}
+                                {{ _('(current)') }}
+                            {%- endif %}
+                            {% if rev.notes -%}
+                                - <span class="revision-note">{{ rev.notes|e }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% if not is_first_page or next_page %}
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            {% if not is_first_page %}
+                                &larr; <a href="javascript:history.back();">{{ _('previous page') }}</a>
+                            {% endif %}
+                            {% if not is_first_page and next_page %} | {% endif %}
+                            {% if next_page %}
+                                <a href="{{ url_for('wiki/changes', area_name=area.name, page_path=page_path, start=next_page) }}">{{ _('next page') }}</a> &rarr;
+                            {% endif %}
+                        </td>
+                    </tr>
+                </foot>
+                {% endif %}
+            </table>
+            <fieldset class="submit">
+                <input type="submit" class="submit" name="submit" value="{{ _('Compare selected versions') }}">
+            </fieldset>
+        </form>
+    {% else %}
+        <p>{{ _('Weird, no changes were found.') }}</p>
+    {% endif %}
+{% endblock %}

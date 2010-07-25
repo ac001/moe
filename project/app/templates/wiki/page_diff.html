@@ -1,0 +1,25 @@
+{% extends 'wiki/base.html' %}
+
+{% set page_title = _('Revision diff for %(page_name)s', page_name=page_name)|e %}
+
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{% block content -%}
+    <h1 class="first">{{ page_title }}</h1>
+    {% if revision1.id == 'latest' %}
+        <p>{% trans url1=url_for('wiki/index', area_name=area.name, page_path=page_path), url2=url_for('wiki/index', area_name=area.name, page_path=page_path, version=revision2.id), id2=revision2.id %}This shows the differences between the <a href="%(url1)s">latest revision</a> and <a href="%(url2)s">revision %(id2)s</a>.{% endtrans %}</p>
+    {% else %}
+        <p>{% trans url1=url_for('wiki/index', area_name=area.name, page_path=page_path, version=revision1.id), url2=url_for('wiki/index', area_name=area.name, page_path=page_path, version=revision2.id), id1=revision1.id, id2=revision2.id %}This shows the differences between <a href="%(url1)s">revision %(id1)s</a> and <a href="%(url2)s">revision %(id2)s</a>.{% endtrans %}</p>
+    {% endif %}
+    <hr>
+    {% if diff -%}
+        {#<pre class="udiff">{{ diff }}</pre>#}
+        <div class="yui-u">
+            <div id="wiki-diff">
+                {{ diff }}
+            </div>
+        </div>
+    {% else %}
+        <p>{{ _('No differences found.') }}
+    {% endif %}
+{%- endblock %}

@@ -1,0 +1,69 @@
+{% extends 'wiki/base.html' %}
+
+{% if page_path %}
+    {% set page_title = _('All pages in %(page_name)s', page_name=page_name)|e %}
+    {% set feed_link = url_for('wiki/list-atom', area_name=area.name, page_path=page_path) %}
+{% else %}
+    {% set page_title = _('All Pages') %}
+    {% set feed_link = url_for('wiki/list-atom', area_name=area.name) %}
+{% endif %}
+
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{%- block head_extra -%}
+    {{- super() -}}
+    <link type="application/atom+xml" rel="alternate" href="{{ feed_link }}" title="{{ _('Atom feed for this page') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="first">
+        {{ page_title }}
+        <a href="{{ feed_link }}" class="icon feedlink" title="{{ _('Atom feed for this page') }}">{{ _('Feed') }}</a>
+    </h1>
+    {% if pages %}
+        {% if page_path %}
+            <p>{% trans url=url_for('wiki/index', area_name=area.name, page_path=page_path), page_name=revision.title|e %}Here is a list of all children pages of <a href="%(url)s">%(page_name)s</a>.{% endtrans %}</p>
+        {% else %}
+            <p>{{ _('Here is a list of all pages available in this wiki.') }}</p>
+        {% endif %}
+        <table class="grid" id="wiki-list">
+            <tbody>
+            {% set row_class = cycler('odd', 'even') %}
+            {% for page in pages %}
+                <tr class="{{ row_class.next() }}">
+                    <td>
+                        <a href="{{ url_for('wiki/index', area_name=area.name, page_path=page.path) }}" class="icon page">{{ page.path }}</a>
+                    </td>
+                    <td class="page-children">
+                        <a href="{{ url_for('wiki/list', area_name=area.name, page_path=page.path) }}" class="icon children" title="{{ _('Children pages of this page') }}">{{ _('Children') }}</a>
+                    </td>
+                    <td class="page-history">
+                        <a href="{{ url_for('wiki/changes', area_name=area.name, page_path=page.path) }}" class="icon history" title="{{ _('Change history for this page') }}">{{ _('History') }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            {% if not is_first_page or next_page %}
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        {% if not is_first_page %}
+                            &larr; <a href="javascript:history.back();">{{ _('previous page') }}</a>
+                        {% endif %}
+                        {% if not is_first_page and next_page %} | {% endif %}
+                        {% if next_page %}
+                            <a href="{{ url_for('wiki/list', area_name=area.name, start=next_page, page_path=page_path) }}">{{ _('next page') }}</a> &rarr;
+                        {% endif %}
+                    </td>
+                </tr>
+            </foot>
+            {% endif %}
+        </table>
+    {% else %}
+        {% if page_path %}
+            <p>{{ _("This page doesn't have any children pages.") }}</p>
+        {% else %}
+            <p>{{ _("This wiki still doesn't have any pages.") }}</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

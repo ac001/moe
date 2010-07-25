@@ -1,0 +1,19 @@
+{% extends 'paste/base.html' %}
+
+{% from 'base/_form_macros.html' import form_field %}
+
+{% block title %}{{ _('New Paste') }} - {{ sitename }}{% endblock %}
+
+{% block content %}
+    <h1>{{ _('New Paste') }}</h1>
+    <form method="post" action="{{ current_url }}" enctype="multipart/form-data" class="tipfy-form">
+        <ol>
+            <li>{{ form_field(form.code, class='large monospace') }}</li>
+            <li>{{ form_field(form.language) }}</li>
+            <li>{{ form_field(form.insert_tab) }}</li>
+        </ol>
+        <fieldset class="submit">
+            <input type="submit" name="submit" value="{{ _('Save') }}" class="submit">
+        </fieldset>
+    </form>
+{% endblock %}

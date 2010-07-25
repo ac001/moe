@@ -1,0 +1,781 @@
+# Translations template for PROJECT.
+# Copyright (C) 2010 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2010-07-01 18:14-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.5\n"
+
+#: app/templates/base/_form_macros.html:4
+msgid "This field is required."
+msgstr ""
+
+#: app/templates/base/_nav_main.html:3 app/moe/paste/handlers.py:41
+msgid "Paste"
+msgstr ""
+
+#: app/templates/base/_nav_main.html:6 app/templates/wiki/base.html:3
+#: app/moe/wiki/handlers.py:89
+msgid "Wiki"
+msgstr ""
+
+#: app/templates/base/error_404.html:3 app/templates/base/error_404.html:6
+msgid "Ooops! Page not found."
+msgstr ""
+
+#: app/templates/base/error_404.html:10
+msgid ""
+"Dear god, what was that? This page was here a second ago, and now it is "
+"gone."
+msgstr ""
+
+#: app/templates/base/error_404.html:11
+msgid "I bet those squirrels are around again. Damn squirrels!"
+msgstr ""
+
+#: app/templates/base/error_500.html:3 app/templates/base/error_500.html:6
+msgid "Ooops! Server error."
+msgstr ""
+
+#: app/templates/base/error_500.html:10
+msgid "Something very weird occurred to make this server reject your request."
+msgstr ""
+
+#: app/templates/base/error_500.html:11
+msgid ""
+"Don't worry, it is not your fault. I bet those squirrels are around "
+"again. Damn squirrels!"
+msgstr ""
+
+#: app/templates/base/layout.html:44
+#, python-format
+msgid "Logged in as %(username)s"
+msgstr ""
+
+#: app/templates/base/layout.html:44 app/templates/base/layout.html:47
+msgid "Log out"
+msgstr ""
+
+#: app/templates/base/layout.html:49
+msgid "Log in"
+msgstr ""
+
+#: app/templates/base/macros.html:6
+msgid "required"
+msgstr ""
+
+#: app/templates/paste/_sidebar.html:1
+msgid "Pastipfy!"
+msgstr ""
+
+#: app/templates/paste/_sidebar.html:2
+msgid "Use this to paste your Tipfy snippets. All submissions are public."
+msgstr ""
+
+#: app/templates/paste/base.html:3
+msgid "Pastebin"
+msgstr ""
+
+#: app/templates/paste/new.html:5 app/templates/paste/new.html:8
+msgid "New Paste"
+msgstr ""
+
+#: app/templates/paste/new.html:16 app/templates/paste/view.html:31
+#: app/templates/users/signup.html:25 app/templates/wiki/page_edit.html:17
+msgid "Save"
+msgstr ""
+
+#: app/templates/paste/view.html:5 app/moe/paste/handlers.py:101
+#, python-format
+msgid "Paste #%(paste_id)s"
+msgstr ""
+
+#: app/templates/paste/view.html:14
+#, python-format
+msgid ""
+"\n"
+"                %(language)s, %(count)s line - <a "
+"href=\"%(url)s\">Raw</a>\n"
+"            "
+msgid_plural ""
+"\n"
+"                %(language)s, %(count)s lines - <a "
+"href=\"%(url)s\">Raw</a>\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/templates/users/signup.html:5
+msgid "Signup"
+msgstr ""
+
+#: app/templates/users/signup.html:12
+msgid "Create a New Account"
+msgstr ""
+
+#: app/templates/users/signup.html:13
+msgid "Please choose a nickname and confirm your email address."
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:2
+msgid "Wiki Syntax"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:3
+msgid "This wiki uses Creole syntax. Most common rules are described below."
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:5
+msgid "General formatting"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:15
+msgid "Links"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:19
+msgid "Headings"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:27
+msgid "Bulleted list"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:33
+msgid "Numbered list"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:39
+msgid "Table"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:44
+msgid "Highlighted code"
+msgstr ""
+
+#: app/templates/wiki/_syntax.html:52
+msgid "Horizontal rule"
+msgstr ""
+
+#: app/templates/wiki/base.html:14
+msgid "Table of contents"
+msgstr ""
+
+#: app/templates/wiki/base.html:18
+msgid "This page"
+msgstr ""
+
+#: app/templates/wiki/base.html:20 app/templates/wiki/page_view.html:55
+msgid "Edit this page"
+msgstr ""
+
+#: app/templates/wiki/base.html:20 app/templates/wiki/page_view.html:55
+#: app/moe/wiki/handlers.py:101
+msgid "Edit"
+msgstr ""
+
+#: app/templates/wiki/base.html:23 app/templates/wiki/latest_changes.html:32
+#: app/templates/wiki/page_list.html:41 app/templates/wiki/page_view.html:51
+msgid "Change history for this page"
+msgstr ""
+
+#: app/templates/wiki/base.html:23 app/templates/wiki/latest_changes.html:32
+#: app/templates/wiki/page_list.html:41 app/templates/wiki/page_view.html:51
+#: app/moe/wiki/handlers.py:108
+msgid "History"
+msgstr ""
+
+#: app/templates/wiki/base.html:24 app/templates/wiki/page_view.html:14
+msgid "Atom feed for changes in this page"
+msgstr ""
+
+#: app/templates/wiki/base.html:24 app/templates/wiki/base.html:38
+#: app/templates/wiki/base.html:42 app/templates/wiki/latest_changes.html:16
+#: app/templates/wiki/page_changes.html:16 app/templates/wiki/page_list.html:21
+msgid "Feed"
+msgstr ""
+
+#: app/templates/wiki/base.html:27 app/templates/wiki/page_view.html:48
+msgid "Save a bookmark for this page"
+msgstr ""
+
+#: app/templates/wiki/base.html:27 app/templates/wiki/page_view.html:48
+msgid "Save on Delicious"
+msgstr ""
+
+#: app/templates/wiki/base.html:28 app/templates/wiki/page_view.html:49
+msgid "Share this page on /r/AppEngine"
+msgstr ""
+
+#: app/templates/wiki/base.html:28 app/templates/wiki/page_view.html:49
+msgid "Submit to Reddit"
+msgstr ""
+
+#: app/templates/wiki/base.html:34
+msgid "This wiki"
+msgstr ""
+
+#: app/templates/wiki/base.html:37
+msgid "List of all pages"
+msgstr ""
+
+#: app/templates/wiki/base.html:37
+msgid "All pages"
+msgstr ""
+
+#: app/templates/wiki/base.html:38
+msgid "Atom feed for list of pages"
+msgstr ""
+
+#: app/templates/wiki/base.html:41
+msgid "List of all latest changes"
+msgstr ""
+
+#: app/templates/wiki/base.html:41
+msgid "Latest changes"
+msgstr ""
+
+#: app/templates/wiki/base.html:42
+msgid "Atom feed for latest changes"
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:3 app/moe/wiki/handlers.py:275
+msgid "Latest Changes"
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:10
+#: app/templates/wiki/latest_changes.html:16
+#: app/templates/wiki/page_changes.html:10
+#: app/templates/wiki/page_changes.html:16 app/templates/wiki/page_list.html:15
+#: app/templates/wiki/page_list.html:21
+msgid "Atom feed for this page"
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:19
+msgid "Here are the latest pages changed in this wiki."
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:42
+#: app/templates/wiki/page_changes.html:51 app/templates/wiki/page_list.html:51
+msgid "previous page"
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:46
+#: app/templates/wiki/page_changes.html:55 app/templates/wiki/page_list.html:55
+msgid "next page"
+msgstr ""
+
+#: app/templates/wiki/latest_changes.html:54
+#: app/templates/wiki/page_changes.html:67
+msgid "Weird, no changes were found."
+msgstr ""
+
+#: app/templates/wiki/overview.html:3 app/templates/wiki/overview.html:8
+msgid "Wiki Overview"
+msgstr ""
+
+#: app/templates/wiki/overview_diff.html:3
+#: app/templates/wiki/overview_diff.html:8
+msgid "Wiki Diff Overview"
+msgstr ""
+
+#: app/templates/wiki/overview_edit.html:3
+#: app/templates/wiki/overview_edit.html:8
+msgid "Wiki Edit Overview"
+msgstr ""
+
+#: app/templates/wiki/page_changes.html:3 app/moe/wiki/handlers.py:346
+#, python-format
+msgid "History for %(page_name)s"
+msgstr ""
+
+#: app/templates/wiki/page_changes.html:19
+msgid ""
+"Here are the previous revisions for this page. To revert to an old "
+"revision, just access the selected one, edit and save it."
+msgstr ""
+
+#: app/templates/wiki/page_changes.html:37
+msgid "(current)"
+msgstr ""
+
+#: app/templates/wiki/page_changes.html:63
+msgid "Compare selected versions"
+msgstr ""
+
+#: app/templates/wiki/page_diff.html:3
+#, python-format
+msgid "Revision diff for %(page_name)s"
+msgstr ""
+
+#: app/templates/wiki/page_diff.html:10
+#, python-format
+msgid ""
+"This shows the differences between the <a href=\"%(url1)s\">latest "
+"revision</a> and <a href=\"%(url2)s\">revision %(id2)s</a>."
+msgstr ""
+
+#: app/templates/wiki/page_diff.html:12
+#, python-format
+msgid ""
+"This shows the differences between <a href=\"%(url1)s\">revision "
+"%(id1)s</a> and <a href=\"%(url2)s\">revision %(id2)s</a>."
+msgstr ""
+
+#: app/templates/wiki/page_diff.html:23
+msgid "No differences found."
+msgstr ""
+
+#: app/templates/wiki/page_edit.html:5
+#, python-format
+msgid "Edit page: %(page_name)s"
+msgstr ""
+
+#: app/templates/wiki/page_list.html:4 app/moe/wiki/handlers.py:224
+#, python-format
+msgid "All pages in %(page_name)s"
+msgstr ""
+
+#: app/templates/wiki/page_list.html:7 app/moe/wiki/handlers.py:115
+#: app/moe/wiki/handlers.py:227
+msgid "All Pages"
+msgstr ""
+
+#: app/templates/wiki/page_list.html:25
+#, python-format
+msgid ""
+"Here is a list of all children pages of <a "
+"href=\"%(url)s\">%(page_name)s</a>."
+msgstr ""
+
+#: app/templates/wiki/page_list.html:27
+msgid "Here is a list of all pages available in this wiki."
+msgstr ""
+
+#: app/templates/wiki/page_list.html:38
+msgid "Children pages of this page"
+msgstr ""
+
+#: app/templates/wiki/page_list.html:38
+msgid "Children"
+msgstr ""
+
+#: app/templates/wiki/page_list.html:64
+msgid "This page doesn't have any children pages."
+msgstr ""
+
+#: app/templates/wiki/page_list.html:66
+msgid "This wiki still doesn't have any pages."
+msgstr ""
+
+#: app/templates/wiki/page_view.html:23 app/moe/wiki/parser.py:55
+msgid "Permalink to this headline"
+msgstr ""
+
+#: app/templates/wiki/page_view.html:30
+#, python-format
+msgid ""
+"This is an older version of this page. See the most updated version <a "
+"href=\"%(url)s\">here</a>."
+msgstr ""
+
+#: app/templates/wiki/page_view.html:36
+#, python-format
+msgid ""
+"This wiki page doesn't exist yet. <a href=\"%(url)s\">Create this "
+"page</a>."
+msgstr ""
+
+#: app/templates/wiki/page_view.html:43
+#, python-format
+msgid "Version: %(version)s"
+msgstr ""
+
+#: app/templates/wiki/page_view.html:45
+#, python-format
+msgid "Edited by %(author)s on %(date)s"
+msgstr ""
+
+#: app/templates/wiki/page_view.html:53
+msgid "This page is not versioned yet."
+msgstr ""
+
+#: app/templates/wiki/page_view.html:63
+msgid "edit"
+msgstr ""
+
+#: app/templates/wiki/page_view.html:63
+msgid "Edit this section"
+msgstr ""
+
+#: app/moe/base/handlers.py:85
+msgid "A problem occurred. Please correct the errors listed in the form."
+msgstr ""
+
+#: app/moe/base/handlers.py:89 app/moe/wiki/handlers.py:569
+#: app/moe/wiki/handlers.py:608
+msgid "Error"
+msgstr ""
+
+#: app/moe/base/handlers.py:111 app/moe/paste/handlers.py:40
+#: app/moe/wiki/handlers.py:88
+msgid "Home"
+msgstr ""
+
+#: app/moe/paste/handlers.py:79
+msgid "The paste was saved."
+msgstr ""
+
+#: app/moe/paste/handlers.py:84
+msgid "Ooops, code is empty! Please post some lines."
+msgstr ""
+
+#: app/moe/paste/highlighting.py:29
+msgid "Text"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:31
+msgid "Python"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:32
+msgid "Python Console Sessions"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:33
+msgid "Python Tracebacks"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:34
+msgid "PHP"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:36
+msgid "Django / Jinja Templates"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:37
+msgid "Mako Templates"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:38
+msgid "Myghty Templates"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:39
+msgid "Apache Config (.htaccess)"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:40
+msgid "Bash"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:41
+msgid "Batch (.bat)"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:42
+msgid "Brainfuck"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:43
+msgid "C"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:45
+msgid "C++"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:46
+msgid "C#"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:47
+msgid "CSS"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:49
+msgid "D"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:50
+msgid "MiniD"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:51
+msgid "Smarty"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:52
+msgid "GL Shader language"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:53
+msgid "HTML"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:54
+msgid "Genshi Templates"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:55
+msgid "JavaScript"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:56
+msgid "Java"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:58
+msgid "JSP"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:59
+msgid "Lua"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:60
+msgid "Haskell"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:61
+msgid "Literate Haskell"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:62
+msgid "Scheme"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:63
+msgid "Ruby"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:64
+msgid "Interactive Ruby"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:65
+msgid "INI File"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:66
+msgid "Perl"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:67
+msgid "eRuby / rhtml"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:68
+msgid "TeX / LaTeX"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:69
+msgid "XML"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:70
+msgid "reStructuredText"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:71
+msgid "IRC Logs"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:73
+msgid "Vim Scripts"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:74
+msgid "OCaml"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:75
+msgid "SQL"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:76
+msgid "MySQL"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:77
+msgid "SquidConf"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:78
+msgid "sources.list"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:79
+msgid "Erlang"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:80
+msgid "Vim"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:81
+msgid "Dylan"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:82
+msgid "GAS"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:83
+msgid "Nasm"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:84
+msgid "LLVM"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:86
+msgid "Clojure"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:87
+msgid "IO"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:88
+msgid "Object-Pascal"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:89
+msgid "Scala"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:90
+msgid "Boo"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:91
+msgid "Matlab"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:92
+msgid "Matlab Session"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:93
+msgid "Povray"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:94
+msgid "Smalltalk"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:95
+msgid "Debian control-files"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:96
+msgid "Gettext catalogs"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:97
+msgid "Lighttpd"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:98
+msgid "Nginx"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:99
+msgid "YAML"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:100
+msgid "XSLT"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:101
+msgid "Go"
+msgstr ""
+
+#: app/moe/paste/highlighting.py:111
+msgid "Undefined language"
+msgstr ""
+
+#: app/moe/users/handlers.py:66
+msgid "Passwords didn't match."
+msgstr ""
+
+#: app/moe/users/handlers.py:86
+msgid "Username already exists. Please try a different one."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:46
+msgid "This address is not valid."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:110
+msgid "Diff"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:120
+msgid "Overview"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:152
+#, python-format
+msgid "Version %(version)s"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:377
+msgid "Please provide a valid version number."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:412 app/moe/wiki/handlers.py:417
+msgid "latest revision"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:414 app/moe/wiki/handlers.py:419
+#, python-format
+msgid "revision %s"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:503 app/moe/wiki/handlers.py:560
+msgid "Invalid page section."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:511
+msgid "Page created"
+msgstr ""
+
+#: app/moe/wiki/handlers.py:566
+msgid ""
+"Ooops. There are syntax errors in the page you submitted. Please verify "
+"if you didn't forget to close any tags."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:578
+msgid "Nothing changed."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:603
+msgid "Page saved."
+msgstr ""
+
+#: app/moe/wiki/handlers.py:606
+msgid ""
+"Ooops. A problem occurred trying to save the page. Please make a backup "
+"of your changes and try again."
+msgstr ""
+
+#: app/moe/wiki/models.py:71
+msgid "Latest"
+msgstr ""
+

@@ -1,0 +1,50 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}{{ _('Wiki') }} - {{ sitename }}{% endblock %}
+
+{% block head_extra -%}
+    <link rel="stylesheet" type="text/css" href="/static/default/styles/wiki.css">
+{%- endblock %}
+
+{% block body_id %}wiki{% endblock %}
+
+{% block sidebar %}
+    {% if current_endpoint == 'wiki/index' %}
+        {% if revision.toc %}
+        <h4>{{ _('Table of contents') }}</h4>
+        {{ revision.toc }}
+        {% endif %}
+
+        <h4>{{ _('This page') }}</h4>
+        <ul>
+            <li><a href="{{ url_for('wiki/edit', area_name=area.name, page_path=page_path, version=version) }}" title="{{ _('Edit this page') }}">{{ _('Edit') }}</a></li>
+            {% if revision %}
+            <li>
+                <a href="{{ url_for('wiki/changes', area_name=area.name, page_path=page_path) }}" title="{{ _('Change history for this page') }}">{{ _('History') }}</a>
+                | <a href="{{ url_for('wiki/changes-atom', area_name=area.name, page_path=page_path) }}" title="{{ _('Atom feed for changes in this page') }}">{{ _('Feed') }}</a>
+            </li>
+            <li>
+                <a href="http://delicious.com/post?url={{ current_url_quoted }}&title={{ title_quoted }}" title="{{ _('Save a bookmark for this page') }}">{{ _('Save on Delicious') }}</a>
+                | <a href="http://reddit.com/r/AppEngine/submit?url={{ current_url_quoted }}&title={{ title_quoted }}" title="{{ _('Share this page on /r/AppEngine') }}">{{ _('Submit to Reddit') }}</a>
+            </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+
+    <h4>{{ _('This wiki') }}</h4>
+    <ul>
+        <li>
+            <a href="{{ url_for('wiki/list', area_name=area.name) }}" title="{{ _('List of all pages') }}">{{ _('All pages') }}</a>
+            | <a href="{{ url_for('wiki/list-atom', area_name=area.name) }}" title="{{ _('Atom feed for list of pages') }}">{{ _('Feed') }}</a>
+        </li>
+        <li>
+            <a href="{{ url_for('wiki/changes', area_name=area.name) }}" title="{{ _('List of all latest changes') }}">{{ _('Latest changes') }}</a>
+            | <a href="{{ url_for('wiki/changes-atom', area_name=area.name) }}" title="{{ _('Atom feed for latest changes') }}">{{ _('Feed') }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block body_extra %}
+    {{ super() }}
+    <script type="text/javascript" src="/static/default/scripts/wiki.js"></script>
+{% endblock %}

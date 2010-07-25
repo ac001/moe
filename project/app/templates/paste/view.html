@@ -1,0 +1,34 @@
+{% extends 'paste/base.html' %}
+
+{% from 'base/_form_macros.html' import form_field %}
+
+{% set page_title = _('Paste #%(paste_id)s', paste_id=paste.id) %}
+
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{% block content %}
+    <h1>{{ page_title }}</h1>
+
+    <div class="paste-tools">
+        <p>
+            {% trans count=paste.lines, language=paste.language_name, url=url_for('paste/view-raw', paste_id=paste.id, area_name=area.name) %}
+                {{ language }}, {{ count }} line - <a href="{{ url }}">Raw</a>
+            {% pluralize %}
+                {{ language }}, {{ count }} lines - <a href="{{ url }}">Raw</a>
+            {% endtrans %}
+        </p>
+    </div>
+
+    {{ paste.code }}
+
+    <form method="post" action="{{ url_for('paste/index', area_name=area.name) }}" enctype="multipart/form-data" class="tipfy-form">
+        <ol>
+            <li>{{ form_field(form.code, class='large monospace') }}</li>
+            <li>{{ form_field(form.language) }}</li>
+            <li>{{ form_field(form.insert_tab) }}</li>
+        </ol>
+        <fieldset class="submit">
+            <input type="submit" name="submit" value="{{ _('Save') }}" class="submit">
+        </fieldset>
+    </form>
+{% endblock %}

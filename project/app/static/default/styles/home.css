@@ -1,0 +1,48 @@
+@import url('base.css');
+@import url('common.css');
+@import url('site.css');
+@import url('highlight.css');
+@import url('_forms.css');
+
+#content .highlight {
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-width: 1px 0;
+    margin: 0;
+}
+#content .highlight pre {
+    line-height: 120%;
+}
+
+#sidebar .in {
+    font-size: 108%;
+}
+
+#home-banner {
+    background: #F0F0F0;
+    font-size: 123.1%;
+    border-top: 1px solid #E6E6E6;
+}
+#home-banner p {
+    margin: 0;
+    padding: 1em;
+}
+#content p.home-ready {
+    background: #F2FFD9;
+    font-size: 123.1%;
+    padding: 1em;
+    margin: 0em 0 2em;
+    border-top: 1px solid #DAE6C3;
+    border-bottom: 1px solid #DAE6C3;
+}
+
+.home-quote {
+    font-style: italic;
+    color: #333333;
+    text-align: right;
+    padding-left: 10em;
+}
+.home-quote .author {
+    font-style: normal;
+    font-weight: bold;
+}

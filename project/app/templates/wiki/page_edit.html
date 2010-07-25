@@ -1,0 +1,37 @@
+{% extends 'wiki/base.html' %}
+
+{% from 'base/_form_macros.html' import form_field %}
+
+{% set page_title = _('Edit page: %(page_name)s', page_name=page_name)|e %}
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{% block content %}
+    <h1 class="first">{{ page_title }}</h1>
+    <form method="post" action="{{ current_url }}" enctype="multipart/form-data" class="tipfy-form">
+        <ol>
+            <li>{{ form_field(form.title) }}</li>
+            <li>{{ form_field(form.body, class='large monospace') }}</li>
+            <li>{{ form_field(form.note) }}</li>
+        </ol>
+        <fieldset class="submit">
+            <input type="submit" name="submit" value="{{ _('Save') }}" class="submit">
+        </fieldset>
+    </form>
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'wiki/_syntax.html' %}
+{% endblock %}
+
+{% block body_extra %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/default/scripts/markitup/skins/simple/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="/static/default/scripts/markitup/sets/wiki/style.css"></link>
+    <script type="text/javascript" src="/static/default/scripts/markitup/jquery.markitup.pack.js"></script>
+    <script type="text/javascript" src="/static/default/scripts/markitup/sets/wiki/set.js"></script>
+    <script language="javascript">
+    $(document).ready(function()	{
+        $('#body').markItUp(mySettings);
+    });
+    </script>
+{% endblock %}

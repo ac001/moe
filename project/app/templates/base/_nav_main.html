@@ -1,0 +1,8 @@
+<ul id="nav" class="clearfix">
+    {% if 'moe.paste' in apps_installed -%}
+        <li{% if current_app == 'paste' %} class="active"{% endif %}><a href="{{ url_for('paste/index', area_name=area.name) }}">{{ _('Paste') }}</a></li>
+    {%- endif -%}
+    {% if 'moe.wiki' in apps_installed -%}
+        <li{% if current_app == 'wiki' %} class="active"{% endif %}><a href="{{ url_for('wiki/index', area_name=area.name) }}">{{ _('Wiki') }}</a></li>
+    {%- endif -%}
+</ul>

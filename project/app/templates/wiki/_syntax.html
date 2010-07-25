@@ -1,0 +1,54 @@
+<div id="wiki-syntax">
+    <h4>{{ _('Wiki Syntax') }}</h4>
+    <p>{{ _('This wiki uses Creole syntax. Most common rules are described below.') }}</p>
+
+    <h6>{{ _('General formatting') }}</h6>
+    <pre>**bold**
+//italic//
+##non-formatted inline text##
+{% raw %}{{{
+    non-formatted
+    block text
+}}}{% endraw %}
+</pre>
+
+    <h6>{{ _('Links') }}</h6>
+    <pre>[[WikiPageName|Page Name]]
+[[http://www.google.com|Google]]</pre>
+
+    <h6>{{ _('Headings') }}</h6>
+    <pre>= Giant Heading
+== Large Heading
+=== Medium Heading
+==== Small Heading
+===== Mini Heading
+====== Tiny Heading</pre>
+
+    <h6>{{ _('Bulleted list') }}</h6>
+    <pre>* Item 1
+* Item 2
+** Sublist item 1
+** Sublist item 2</pre>
+
+    <h6>{{ _('Numbered list') }}</h6>
+    <pre># Item 1
+# Item 2
+## Sublist item 1
+## Sublist item 2</pre>
+
+    <h6>{{ _('Table') }}</h6>
+    <pre>|=table|=header|=here|
+|table|row|here|
+|table|row|here|</pre>
+
+    <h6>{{ _('Highlighted code') }}</h6>
+    <pre>&lt;&lt;code python&gt;&gt;
+def hello(who):
+    print "Hello, %s!" % who
+
+hello('world')
+&lt;&lt;/code&gt;&gt;</pre>
+
+    <h6>{{ _('Horizontal rule') }}</h6>
+    <pre>----</pre>
+</div>

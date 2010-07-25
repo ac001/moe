@@ -1,0 +1,248 @@
+@import url('base.css');
+@import url('common.css');
+@import url('site.css');
+@import url('highlight.css');
+@import url('_forms.css');
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+    margin-top: 1em;
+}
+#content h1.first {
+    margin-top: 0;
+}
+
+textarea#body  {
+    height: 400px;
+}
+
+#sidebar .in {
+    font-size: 108%;
+}
+
+#wiki-changes thead td, #wiki-changes tfoot td,
+#wiki-list thead td, #wiki-list tfoot td {
+    text-align: right;
+}
+
+#wiki-changes .version-selector {
+    width: 1px;
+}
+
+td.page-date {
+    width: 165px;
+    text-align: right;
+}
+td.page-children, td.page-history {
+    width: 1px;
+}
+
+a.icon, span.icon {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+}
+a.children {
+    background-image: url('/static/default/images/folder_page.png');
+}
+a.history {
+    background-image: url('/static/default/images/hourglass.png');
+}
+a.page {
+    background-image: url('/static/default/images/page.png');
+}
+a.time {
+    background-image: url('/static/default/images/clock.png');
+}
+a.feedlink {
+    background-image: url('/static/default/images/feed.png');
+}
+
+p.warning {
+    background: #FFE5E5;
+    border: 1px solid #FFCCCC;
+    border-width: 1px 0;
+    padding: .5em 1em;
+    margin: 1em 0;
+}
+
+ul.wiki-page-info {
+    list-style: none;
+    font-size: 93%;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+ul.wiki-page-info li {
+    display: inline;
+    padding: 0 0 0 .5em;
+    margin:  0 0 0 .3em;
+    border-left: 1px solid #CCCCCC;
+}
+ul.wiki-page-info li.first {
+    padding: 0;
+    margin:  0;
+    border-left: 0;
+}
+
+span.revision-note {
+    font-size: 93%;
+    color: #666666;
+}
+#wiki-diff {
+    font-family: monospace;
+}
+#wiki-diff p {
+    padding: 0;
+    margin: 0;
+}
+#wiki-diff ins {
+    text-decoration: none;
+}
+#wiki-diff p.minus, #wiki-diff p.plus {
+    padding: .3em;
+}
+#wiki-diff .minus {
+    background: #FFE6E6;
+}
+#wiki-diff .plus {
+    background: #E6FFE6;
+}
+
+/* Macros */
+code {
+    background: #F0F0F0;
+    font-family: monospace;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+div.macro-note {
+    background: #E6F5FF;
+    padding: 1em 1em .5em;
+    border: 1px solid #CFDDE6;
+    border-width: 1px 0;
+    margin-bottom: 1em;
+}
+div.macro-note p {
+    padding: 0;
+    margin-bottom: .5em !important;
+}
+div.macro-note code {
+    background: transparent;
+}
+div.warning {
+    background: #FFE5E5;
+    border: 1px solid #FFCCCC;
+    border-width: 1px 0;
+}
+div.macro-note p.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #003399;
+}
+div.warning p.title {
+    color: #CC0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dl {
+    padding: 0;
+    margin: 0 0 1em 1em;
+}
+dd {
+    padding: 0;
+    margin: 0 0 .5em;
+}
+
+
+li .highlight  {
+    margin: .5em 0;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+    background: transparent;
+}
+
+a.headerlink {
+    visibility: hidden;
+}
+a.editsectionlink {
+    float: right;
+    font-size: 13px;
+    color: #666666;
+    margin-left: 1em;
+}
+a.editsectionlink:hover {
+    color: #CC0000;
+}
+a.feedlink {
+    float: right;
+    font-size: 13px;
+    color: #666666;
+}
+a.feedlink:hover {
+    color: #CC0000;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+
+#content a.headerlink {
+    color: #0066FF;
+    text-decoration: none;
+    padding: 0 .3em;
+    margin-left: .2em;
+}
+
+#content a.headerlink:hover {
+    background: #0066FF;
+    color: #FFFFFF;
+}
+
+.toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-h1 {
+    margin-left: 0;
+}
+.toc-h2 {
+    margin-left: 1.5em;
+    margin-left: 0;
+}
+.toc-h3 {
+    margin-left: 2em;
+    margin-left: 0;
+}
+.toc-h4, .toc-h5, .toc-h6 {
+    margin-left: 4.5em;
+    margin-left: 0;
+}

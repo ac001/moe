@@ -1,0 +1,96 @@
+{#-
+    All blocks:
+
+    {% block title %}{% endblock %}
+    {% block head_extra %}{% endblock %}
+    {% block body_id %}{% endblock %}
+    {% block header %}{% endblock %}
+        {% block nav_main %}{% endblock %}
+        {% block user_status %}{% endblock %}
+        {% block nav_breadcrumbs %}{% endblock %}
+    {% block body %}{% endblock %}
+        {% block content %}{% endblock %}
+        {% block sidebar %}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block messages %}{% endblock %}
+    {% block body_extra %}{% endblock %}
+-#}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="generator" content="http://www.tipfy.org" />
+        {%- block head_extra %}{% endblock %}
+    </head>
+    <body id="{% block body_id %}page{% endblock %}">
+        {% block header %}
+        <div class="yui-d0 header">
+            <div id="hd">
+                {% block nav_main %}
+                    {% include 'base/_nav_main.html' %}
+                {% endblock %}
+
+                {% block breadcrumbs %}
+                <ul id="breadcrumbs" class="clearfix">
+                    {%- for url, path in breadcrumbs -%}
+                        <li{% if loop.first %} class="first"{% elif loop.last %} class="last"{% endif %}><a href="{{ url }}">{{ path }}</a>{% if not loop.last %} &rarr; {% endif %}</li>
+                    {%- endfor -%}
+                </ul>
+                {% endblock %}
+
+                {% block user_status %}
+                <p id="user-status">
+                    {%- if current_user -%}
+                        {{ _('Logged in as %(username)s', username=current_user.username) }} | <a href="{{ logout_url }}">{{ _('Log out') }}</a>
+                    {%- else -%}
+                        {%- if is_authenticated -%}
+                            <a href="{{ logout_url }}">{{ _('Log out') }}</a>
+                        {%- else -%}
+                            <a href="{{ login_url }}">{{ _('Log in') }}</a>
+                        {%- endif %}
+                    {%- endif %}
+                </p>
+                {% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block body %}
+            <div class="yui-d0 body">
+                <div class="yui-t6">
+                    <div class="yui-main">
+                        <div class="yui-b" id="content">
+                            <div class="in">
+                                {% block content %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yui-b" id="sidebar">
+                        <div class="in">
+                            {% block sidebar %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block footer %}
+            <div id="ft">
+                <p>Powered by <a href="http://www.tipfy.org/wiki/moe/">Moe</a>. Yeah, the name is Moe. <a href="http://code.google.com/appengine/"><img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" /></a></p>
+            </div>
+        {% endblock %}
+
+        {%- block messages -%}
+            {% from 'base/macros.html' import system_messages %}
+            {{ system_messages(messages) }}
+        {%- endblock -%}
+
+        {%- block body_extra %}
+            <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+            <script type="text/javascript">google.load('jquery', '1.4.2');google.load('jqueryui', '1.7.2');</script>
+            <script type="text/javascript" src="/static/default/scripts/tipfy.js"></script>
+        {% endblock %}
+
+        {% include 'base/_analytics.html' %}
+    </body>
+</html>

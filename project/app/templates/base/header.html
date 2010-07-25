@@ -1,0 +1,5 @@
+<p>{% if current_user %}
+    Logged in as {{ current_user.username }} | <a href="{{ logout_url }}">logout</a>
+{% else %}
+    <a href="{{ login_url }}">login</a>
+{% endif %}</p>

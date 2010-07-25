@@ -1,0 +1,66 @@
+{% extends 'wiki/base.html' %}
+
+{% if revision %}
+    {% set page_title = revision.title|e %}
+{% else %}
+    {% set page_title = page_name|e %}
+{% endif %}
+
+{% block title %}{{ page_title }} - {{ sitename }}{% endblock %}
+
+{%- block head_extra -%}
+    {{- super() -}}
+    {% if revision -%}
+        <link type="application/atom+xml" rel="alternate" href="{{ url_for('wiki/changes-atom', area_name=area.name, page_path=page_path) }}" title="{{ _('Atom feed for changes in this page') }}">
+    {%- endif %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="first heading">
+        {{ page_title }}
+        {% if revision %}
+            <span id="{{ slug }}"></span>
+            <a class="headerlink" href="#{{ slug }}" title="{{ _('Permalink to this headline') }}">&para;</a>
+        {% endif %}
+    </h1>
+
+    {% if revision %}
+        {% if version %}
+            <p class="warning">
+                {{ _('This is an older version of this page. See the most updated version <a href="%(url)s">here</a>.', url=url_for('wiki/index', area_name=area.name, page_path=page_path)) }}
+            </p>
+        {% endif %}
+        {{ revision.body }}
+    {% else %}
+        <p>
+            {{ _('This wiki page doesn\'t exist yet. <a href="%(url)s">Create this page</a>.', url=url_for('wiki/edit', area_name=area.name, page_path=page_path)) }}
+        </p>
+    {% endif %}
+
+    <hr>
+    <ul class="wiki-page-info">
+        {% if revision %}
+            <li class="first">{{ _('Version: %(version)s', version=revision.id) }}</li>
+            <li>
+                {{ _('Edited by %(author)s on %(date)s', author=revision.editor.username, date=format_datetime(revision.created, format='short')) }}
+            </li>
+            <li>
+                <a href="http://delicious.com/post?url={{ current_url_quoted }}&title={{ title_quoted }}" title="{{ _('Save a bookmark for this page') }}">{{ _('Save on Delicious') }}</a>
+                | <a href="http://reddit.com/r/AppEngine/submit?url={{ current_url_quoted }}&title={{ title_quoted }}" title="{{ _('Share this page on /r/AppEngine') }}">{{ _('Submit to Reddit') }}</a>
+            </li>
+            <li><a href="{{ url_for('wiki/changes', area_name=area.name, page_path=page_path) }}" title="{{ _('Change history for this page') }}">{{ _('History') }}</a></li>
+        {% else %}
+            <li class="first">{{ _('This page is not versioned yet.') }}</li>
+        {% endif %}
+        <li class="last"><a href="{{ url_for('wiki/edit', area_name=area.name, page_path=page_path, version=version) }}" title="{{ _('Edit this page') }}">{{ _('Edit') }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block body_extra %}
+    {{ super() }}
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $.tipfy.wiki.set_edit_section('{{ url_for('wiki/edit', area_name=area.name, page_path=page_path, version=version) }}', '{{ _('edit')|e }}', '{{ _('Edit this section')|e }}');
+    });
+    </script>
+{% endblock %}

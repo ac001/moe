@@ -1,0 +1,5 @@
+Moe was started by `Rodrigo Moraes <rodrigo.moraes@gmail.com>`_.
+
+CSS layout uses `YUI Grid <http://developer.yahoo.com/yui/3/cssgrids/>`_.
+
+Icons are from FamFamFam's `Silk collection <http://www.famfamfam.com/lab/icons/>`_.
