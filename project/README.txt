@@ -1,3 +1,5 @@
+# TODO change this to Moe installation
+
 Tipfy Installation
 ==================
 Tipfy is a small but powerful framework made specifically for Google App
